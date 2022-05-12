@@ -1,110 +1,59 @@
 //이미지 슬라이드
-const items = [
-    {
-        position: 0,
-        el: document.getElementById('carousel-item-1')
-    },
-    {
-        position: 1,
-        el: document.getElementById('carousel-item-2')
-    },
-    {
-        position: 2,
-        el: document.getElementById('carousel-item-3')
-    }
-];
+const slides = document.querySelector('#slides'); //전체 슬라이드 컨테이너 
+const slideImg = document.querySelectorAll('#carousel-item'); //모든 슬라이드들 
+let currentIdx = 0; //현재 슬라이드 index 
+const slideCount = slideImg.length; // 슬라이드 개수 
+const prev = document.querySelector('#data-carousel-prev'); //이전 버튼 
+const next = document.querySelector('#data-carousel-next'); //다음 버튼 
 
-const options = {
-    activeItemPosition: 1,
-    interval: 3000,
-    
-    indicators: {
-        activeClasses: 'bg-white dark:bg-gray-800',
-        inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
-        items: [
-            {
-                position: 0,
-                el: document.getElementById('carousel-indicator-1')
-            },
-            {
-                position: 1,
-                el: document.getElementById('carousel-indicator-2')
-            },
-            {
-                position: 2,
-                el: document.getElementById('carousel-indicator-3')
-            }
-        ]
-    },
 
-    // callback functions
-    onNext: () => {
-        console.log('next slider item is shown');
-    },
-    onPrev: ( ) => {
-        console.log('previous slider item is shown');
-    },
-    onChange: ( ) => {
-        console.log('new slider item has been shown');
-    }
-};
+function moveSlide(num) { 
+	slides.style.left = -num * 400 + 'px'; 
+	currentIdx = num; 
+} 
 
-const carousel = new Carousel(items, options);
+prev.addEventListener('click', function () { 
+	/*첫 번째 슬라이드로 표시 됐을때는 이전 버튼 눌러도 아무런 반응 없게 하기 위해 
+	currentIdx !==0일때만 moveSlide 함수 불러옴 */
+	
+	if (currentIdx !== 0) moveSlide(currentIdx - 1); 
+}); 
 
-const prevButton = document.getElementById('data-carousel-prev');
-const nextButton = document.getElementById('data-carousel-next');
-
-prevButton.addEventListener('click', () => {
-    carousel.prev();
+next.addEventListener('click', function () { 
+	/* 마지막 슬라이드로 표시 됐을때는 다음 버튼 눌러도 아무런 반응 없게 하기 위해 
+	currentIdx !==slideCount - 1 일때만 moveSlide 함수 불러옴 */ 
+	if (currentIdx !== slideCount - 1) { 
+		moveSlide(currentIdx + 1); 
+	} 
 });
-
-nextButton.addEventListener('click', () => {
-    carousel.next();
-});
-
-
 
 //탭
-const tabElements = [
-    {
-        id: 'profile',
-        triggerEl: document.querySelector('#profile-tab-example'),
-        targetEl: document.querySelector('#profile-example')
-    },
-    {
-        id: 'dashboard',
-        triggerEl: document.querySelector('#dashboard-tab-example'),
-        targetEl: document.querySelector('#dashboard-example')
-    },
-    {
-        id: 'settings',
-        triggerEl: document.querySelector('#settings-tab-example'),
-        targetEl: document.querySelector('#settings-example')
-    },
-    {
-        id: 'contacts',
-        triggerEl: document.querySelector('#contacts-tab-example'),
-        targetEl: document.querySelector('#contacts-example')
-    }
-];
+const tabList = document.querySelectorAll(".tab_list");
+const tabContent = document.querySelectorAll(".tab_content");
+console.log(tabList);
+console.log(tabContent);
 
-// options with default values
-const options2 = {
-    defaultTabId: 'settings',
-    activeClasses: 'text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500',
-    inactiveClasses: 'text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300',
-    onShow: () => {
-        console.log('tab is shown');
-    }
-};
+tabList.forEach((item) => {
+  item.addEventListener("click", tabHandler);
+});
 
-const tabs = new Tabs(tabElements, options2);
+function tabHandler(item) {
+  const tabTarget = item.currentTarget;
+  const target = tabTarget.dataset.tab;
+  console.log(tabTarget);
+  console.log(target);
 
-// shows another tab element
-tabs.show('dashboard');
+//  console.log(document.querySelector("#" + target));
 
-// get the tab object based on ID
-tabs.getTab('contacts')
+  tabList.forEach((title) => {
+    title.classList.remove("active");
+  });
+  
+  tabContent.forEach((target) => {
+    target.classList.remove("target");
+  });
+  
+  tabTarget.classList.add("active");
+  document.querySelector("#" + target).classList.add("target");
+}
 
-// get the current active tab object
-tabs.getActiveTab()
