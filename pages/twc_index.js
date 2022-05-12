@@ -1,7 +1,8 @@
-//이미지 슬라이드
+//----------------이미지 슬라이드----------------
 const slides = document.querySelector('#slides'); //전체 슬라이드 컨테이너 
 const slideImg = document.querySelectorAll('#carousel-item'); //모든 슬라이드들 
 let currentIdx = 0; //현재 슬라이드 index 
+
 const slideCount = slideImg.length; // 슬라이드 개수 
 const prev = document.querySelector('#data-carousel-prev'); //이전 버튼 
 const next = document.querySelector('#data-carousel-next'); //다음 버튼 
@@ -27,7 +28,8 @@ next.addEventListener('click', function () {
 	} 
 });
 
-//탭
+
+//----------------탭----------------
 const tabList = document.querySelectorAll(".tab_list");
 const tabContent = document.querySelectorAll(".tab_content");
 console.log(tabList);
@@ -57,6 +59,5 @@ function tabHandler(item) {
   document.querySelector("#" + target).classList.add("target");
 }
 
-//20220512 수정
 
 

@@ -9,7 +9,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,60 +25,68 @@
 </head>
 
 <body>
+<!-- Body Content 시작 -->
 <div class="max-w-7xl mx-auto h-screen" >
+
     <!-- body 상단 시작 -->
     <div class="flex flex-row mt-5 h-2/6">
+
         <!-- 구역 1 시작 -->
         <div class="basis-3/5  p-8 ml-3 mb-3 relative h-80 ">
+
             <!-- 이미지 슬라이드 시작 -->
             <div id= "slides" class="absolute inset-0 z-0">
 
                 <!-- Item 1 -->
-                <div id="carousel-item" class="absolute inset-x-0 top-0 h-80">
+                <div id="carousel-item" class="absolute inset-0 h-80">
                     <span class="absolute top-1/4 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img src=".././twc_img/lg_g14961300222974_08.연미색.jpg" class="block absolute object-cover h-80 w-120 " alt="...">
+                    <img src=".././twc_img/lg_g14961300222974_08.연미색.jpg" class="block absolute object-fill h-80 w-120 " alt="...">
                     <div class="carousel-caption hidden md:block absolute text-center align-bottom">
                         <h5 class="text-xl">First slide label</h5>
                         <p class="align-bottom">Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
+
                 <!-- Item 2 -->
-                <div id="carousel-item" class="absolute inset-x-0 top-0 h-80">
-                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" class=" block absolute object-cover h-80 w-120  " alt="...">
-                    <!-- <div class="carousel-caption hidden md:block absolute text-center">
+                <div id="carousel-item" class="absolute inset-0 h-80">
+                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" class=" block absolute object-fill h-80 w-120  " alt="...">
+                    <div class="carousel-caption hidden md:block absolute text-center">
                         <h5 class="text-xl">Second slide label</h5>
                         <p>Some representative placeholder content for the Second slide.</p>
-                    </div> -->
+                    </div> 
                 </div>
+
                 <!-- Item 3 -->
-                <div id="carousel-item" class="absolute inset-x-0 top-0 h-80">
-                    <img src=".././twc_img/lg_f14961300242496_02.물색.jpg" class=" block absolute object-cover h-80 w-120  " alt="...">
-                    <!-- <div class="carousel-caption hidden md:block absolute text-center">
+                <div id="carousel-item" class="absolute inset-0 h-80">
+                    <img src=".././twc_img/lg_f14961300242496_02.물색.jpg" class=" block absolute object-fill h-80 w-120  " alt="...">
+                    <div class="carousel-caption hidden md:block absolute text-center">
                         <h5 class="text-xl">Third slide label</h5>
                         <p>Some representative placeholder content for the Third slide.</p>
-                    </div> -->
+                    </div> 
                 </div>
                
 
-            <!-- Slider indicators -->
-            <div class="flex absolute bottom-5 left-1/2 z-10 space-x-3 -translate-x-1/2">
-                <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="true" aria-label="Slide 1"></button>
-                <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 2"></button>
-                <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 3"></button>
-            </div>
-            <!-- Slider controls -->
-            <button id="data-carousel-prev" type="button" class="prevBtn">
-                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 z-10 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    <span class="hidden">Previous</span>
-                </span>
-            </button>
-            <button id="data-carousel-next" type="button" class="nextBtn">
-                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 z-10 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    <span class="hidden">Next</span>
-                </span>
-            </button>
+                <!-- Slider 표시 -->
+                <div class="flex absolute bottom-5 left-1/2 z-10 space-x-3 -translate-x-1/2">
+                    <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="true" aria-label="Slide 1"></button>
+                    <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 2"></button>
+                    <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full bg-white" aria-current="false" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- Slider 좌우 버튼 -->
+                <button id="data-carousel-prev" type="button" class="prevBtn">
+                    <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 z-10 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button id="data-carousel-next" type="button" class="nextBtn">
+                    <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-5 h-5 z-10 text-black sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+
             </div>
             <!-- 이미지 슬라이드 끝 -->
         </div>
@@ -88,47 +95,13 @@
 
         <!-- 구역 2 시작 -->
         <div class="basis-2/5 w-80 p-8 ml-3 mb-3 ">
-            <div>
-                <!-- item 1-->
-                <div class="mt-3 mb-3">
-                    <div>
-                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
-                    </div>
-                    <div>
-                        <div>
-                            <h3 class="text-sm text-gray-700">
-                            <a href="#">
-                                [연구자 칼럼]
-                            </a>
-                            </h3>
-                            <p>2022년 의료기기의 혁신</p>
-                        </div>
-                    </div>
+            <!-- item 1-->
+            <div class="mt-3 mb-3">
+                <div>
+                <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
                 </div>
-
-                <!-- item 2-->
-                <div class="mt-3 mb-3" >
+                <div>
                     <div>
-                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
-                    </div>
-                    <div class="ml-3">
-                        <div>
-                            <h3 class="text-sm text-gray-700">
-                            <a href="#">
-                                [연구자 칼럼]
-                            </a>
-                            </h3>
-                            <p>2022년 의료기기의 혁신</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- item 3-->
-                <div class="mt-3 mb-3">
-                    <div>
-                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
-                    </div>
-                    <div class="ml-3">
                         <h3 class="text-sm text-gray-700">
                         <a href="#">
                             [연구자 칼럼]
@@ -137,36 +110,72 @@
                         <p>2022년 의료기기의 혁신</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- item 4-->
-                <div class="mt-3 mb-3">
+            <!-- item 2-->
+            <div class="mt-3 mb-3" >
+                <div>
+                <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
+                </div>
+                <div class="ml-3">
                     <div>
-                    <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
-                    </div>
-                    <div>
-                        <div>
-                            <h3 class="text-sm text-gray-700">
-                            <a href="#">
-                                [연구자 칼럼]
-                            </a>
-                            </h3>
-                            <p>2022년 의료기기의 혁신</p>
-                        </div>
+                        <h3 class="text-sm text-gray-700">
+                        <a href="#">
+                            [연구자 칼럼]
+                        </a>
+                        </h3>
+                        <p>2022년 의료기기의 혁신</p>
                     </div>
                 </div>
-
             </div>
+
+            <!-- item 3-->
+            <div class="mt-3 mb-3">
+                <div>
+                <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm text-gray-700">
+                    <a href="#">
+                        [연구자 칼럼]
+                    </a>
+                    </h3>
+                    <p>2022년 의료기기의 혁신</p>
+                </div>
+            </div>
+
+            <!-- item 4-->
+            <div class="mt-3 mb-3">
+                <div>
+                <img src=".././twc_img/lg_g14961300199633_011.연회색.jpg" alt="Front of men&#039;s Basic Tee in black." class="float-left w-20 h-15">
+                </div>
+                <div>
+                    <div>
+                        <h3 class="text-sm text-gray-700">
+                        <a href="#">
+                            [연구자 칼럼]
+                        </a>
+                        </h3>
+                        <p>2022년 의료기기의 혁신</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- 구역 2 끝 -->
     
     </div>
     <!-- body 상단 끝 -->
 
+
+
     <!-- body 중단 시작 -->    
     <div class="flex flex-row mt-5 h-2/6">
+
         <!-- 구역 3 시작 -->
         <div class="basis-3/5 w-80 p-8 ml-3 mb-3 mt-3 ">
             <p class="font-bold">유망연구실 INFORMATION</p>
+
             <!-- tab으로 데이터 구분해주기 -->
             <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
                 <ul class=" flex flex-wrap -mb-px">
@@ -238,12 +247,17 @@
                     <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
                 </div>
             </div>
+
         </div>
         <!-- 구역 4 끝 -->
+
     </div>
     <!-- body 중단 끝 -->
+
+
     
     <!-- body 하단 시작 -->
+
     <!-- 구역 5 시작 -->
     <div class="max-w-7xl mx-auto mt-5 h-2/6 p-8 ml-3 mt-3">
         <p class="font-bold float-left mr-3">Professionals</p>
@@ -274,27 +288,6 @@
         </div>
 
         <!-- tab에 따라 달라질 CONTENT -->
-        <div id="tab_content">
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile-example" role="tabpanel" aria-labelledby="profile-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="dashboard-example" role="tabpanel" aria-labelledby="dashboard-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="settings-example" role="tabpanel" aria-labelledby="settings-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts-example" role="tabpanel" aria-labelledby="contacts-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts-example" role="tabpanel" aria-labelledby="contacts-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-            <div class="tab_content hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts-example" role="tabpanel" aria-labelledby="contacts-tab-example">
-                <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-            </div>
-        </div>
-
         <div class="bg-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none">
@@ -389,11 +382,17 @@
     <!-- body 하단 끝 -->
 
 </div>
+<!-- Body Content 끝 -->
+
+
+<!-- java script -->
 <script src = "twc_index.js"></script>
 
 </body>
 </html>
 
+
+<!-- foot -->
 <?php 
     include_once('./twc_foot.php')
 ?>
