@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<!-- Body Content 시작 -->
+<!-- Body Content 시작 ***************************************-->
 <div class="max-w-7xl mx-auto h-screen" >
 
     <!-- body 상단 시작 -->
